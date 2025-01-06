@@ -1,0 +1,7 @@
+azure.storage.blob
+pandas
+openai
+python-dotenv
+pdfplumber
+fitz
+flask

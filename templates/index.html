@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>File Upload Form</title>
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        /* Body background image */
+        body {
+            background-image: url("../static/QuoteGeneration.png"); /* Your PNG background */
+            background-repeat: no-repeat;
+            background-size: 100vw;
+            background-position: 0px -32px;
+            height: 100vh; /* Ensure the background stretches to fill the viewport height */
+            margin: 0;
+        }
+
+        /* Remove any background color, padding, or borders from the form container */
+        .col-md-6 {
+            background: transparent; /* No background, directly on PNG */
+            padding: 0; /* Remove padding */
+            margin-top: -10%; /* Move form upward */
+            box-shadow: none; /* Remove any box-shadow (no 3D effect) */
+            border: none; /* Remove any border */
+        }
+
+        /* Form styling */
+        .form-group {
+            margin: 0; /* Remove extra margin */
+        }
+
+        /* Styling for the file input */
+        .form-control-file {
+            background: transparent; /* Make the background transparent */
+            border: none; /* Remove border */
+            padding: 10px; /* Padding to ensure the input is not too tight */
+            width: 100%; /* Make it span the full width of the container */
+            color: white; /* Make text white (including "No file chosen") */
+            font-size: 16px; /* Adjust font size */
+        }
+
+        /* Remove border when file input is focused */
+        .form-control-file:focus {
+            outline: none; /* Remove focus outline */
+            border-color: transparent; /* Make sure there's no border */
+        }
+
+        /* Button styling */
+        .btn {
+            width: 100%; /* Make the button span the full width */
+        }
+
+        /* Label styling */
+        .form-group label {
+            color: white; /* Make the label text white */
+            font-size: 18px; /* Adjust label font size */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4"><i class="fas fa-file-upload"></i> </h1>
+                <form method="post" enctype="multipart/form-data" onsubmit="showLoading()">
+                    <div class="form-group">
+                        <label for="file">Choose PDF File</label>
+                        <input type="file" class="form-control-file" id="file" name="file" accept=".pdf" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Upload <i class="fas fa-upload"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

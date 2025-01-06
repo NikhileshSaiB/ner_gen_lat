@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>NER Document Analysis</title>
+    <style>
+        /* Loading spinner styles */
+        .loading {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-file-alt"></i> Named Entity Recognition</h1>
+            <p>Efficiently analyze insurance documents for critical information</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+                <div class="upload-area">
+                    <label for="file-upload" class="custom-file-upload">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload Document
+                    </label>
+                    <input id="file-upload" type="file" name="file" accept=".pdf" required>
+                    <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> Submit</button>
+                </div>
+            </form>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+            </div>
+            {% if result %}
+                <div class="result-section">
+                    <h2><i class="fas fa-check-circle"></i> Extracted Entities</h2>
+                    <div class="result-table">
+                        {{ result|safe }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NER Document Analysis. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const loadingSpinner = document.querySelector('.loading');
+
+        form.addEventListener('submit', function() {
+            loadingSpinner.style.display = 'block'; // Show loading spinner
+        });
+    </script>
+</body>
+</html>

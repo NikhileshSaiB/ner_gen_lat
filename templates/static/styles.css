@@ -1,0 +1,41 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.table {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table td {
+    color: #343a40;
+    text-align: center;
+}
+
+/* Full height container for upload form */
+.row {
+    min-height: 100vh;
+}
+
+/* Center the table wrapper */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Adjust button styling */
+.btn {
+    font-size: 16px;
+}
