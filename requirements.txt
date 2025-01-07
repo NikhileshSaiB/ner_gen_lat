@@ -3,8 +3,8 @@ pandas
 openai
 python-dotenv
 pdfplumber
-fitz
+# fitz
 flask
-importlib-metadata
+# importlib-metadata
 azure-storage-blob
 azure-identity
