@@ -8,3 +8,6 @@ flask
 # importlib-metadata
 azure-storage-blob
 azure-identity
+azure-mgmt-compute 
+azure-mgmt-storage 
+azure-mgmt-resource

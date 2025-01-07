@@ -1,10 +1,12 @@
 import os
 import json
 from azure.storage.blob import BlobServiceClient
+# from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 # import fitz
 import json
 import pandas as pd
 from openai import AzureOpenAI
+
 from dotenv import load_dotenv
 
 
