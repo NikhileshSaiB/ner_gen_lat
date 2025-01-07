@@ -1,4 +1,4 @@
-azure.storage.blob
+# azure.storage.blob
 pandas
 openai
 python-dotenv
@@ -6,3 +6,5 @@ pdfplumber
 fitz
 flask
 importlib-metadata
+azure-storage-blob
+azure-identity
